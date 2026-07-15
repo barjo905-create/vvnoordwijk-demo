@@ -332,6 +332,14 @@ h1, h2, h3, .display {
 }
 .marquee span i { font-style: normal; color: var(--rood-licht); padding-right: 42px; font-size: 16px; vertical-align: middle; }
 @keyframes loop { to { transform: translateX(-50%); } }
+.marquee--logos { align-items: center; gap: 22px; padding: 4px 0; }
+.marquee--logos .logo-pill {
+  background: var(--wit); border-radius: 12px; padding: 12px 26px;
+  height: 74px; display: flex; align-items: center; justify-content: center;
+  flex: 0 0 auto; transition: transform .3s ease;
+}
+.marquee--logos .logo-pill:hover { transform: translateY(-3px); }
+.marquee--logos .logo-pill img { max-height: 46px; width: auto; max-width: 190px; object-fit: contain; }
 
 /* ============ SPELERS ============ */
 .spelers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
@@ -430,17 +438,6 @@ blockquote.missie {
 .pagina-hero .lichtbundel { opacity: .55; }
 .pagina-hero h1 { font-size: clamp(44px, 7vw, 92px); }
 .pagina-hero p { max-width: 620px; margin-top: 18px; font-size: 17px; }
-
-/* ============ CURSOR (desktop) ============ */
-.cursor {
-  position: fixed; z-index: 999; pointer-events: none;
-  width: 12px; height: 12px; border-radius: 50%;
-  background: var(--rood-licht); mix-blend-mode: difference;
-  transform: translate(-50%, -50%);
-  transition: width .25s ease, height .25s ease, background .25s ease;
-}
-.cursor.groot { width: 40px; height: 40px; background: transparent; border: 1.5px solid var(--rood-licht); }
-@media (hover: none), (max-width: 940px) { .cursor { display: none; } }
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 1080px) {

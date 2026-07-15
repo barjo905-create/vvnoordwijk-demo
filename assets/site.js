@@ -92,24 +92,6 @@
     setInterval(tik, 1000);
   }
 
-  /* Custom cursor (desktop) */
-  if (window.matchMedia('(hover: hover) and (min-width: 941px)').matches) {
-    var cursor = document.createElement('div');
-    cursor.className = 'cursor';
-    document.body.appendChild(cursor);
-    var cx = -100, cy = -100, tx = -100, ty = -100;
-    document.addEventListener('mousemove', function (e) { tx = e.clientX; ty = e.clientY; });
-    (function lus() {
-      cx += (tx - cx) * 0.18; cy += (ty - cy) * 0.18;
-      cursor.style.left = cx + 'px'; cursor.style.top = cy + 'px';
-      requestAnimationFrame(lus);
-    })();
-    document.querySelectorAll('a, button, .knop').forEach(function (el) {
-      el.addEventListener('mouseenter', function () { cursor.classList.add('groot'); });
-      el.addEventListener('mouseleave', function () { cursor.classList.remove('groot'); });
-    });
-  }
-
   /* Parallax hero-achtergrond */
   var heroBg = document.querySelector('.hero-bg');
   if (heroBg) {
